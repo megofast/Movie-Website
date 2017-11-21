@@ -1,0 +1,339 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Movie Website</title>
+        
+        <!-- Include all the bootstrap scripts and style sheets -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style type="text/css" media="screen">
+            .content {
+                position: relative;
+                height: 260px;
+            }
+            .bottom-align-text {
+                position: absolute;
+                bottom: 0;
+            }
+        </style>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                // Get the current url for the youtube video before removing it.
+                var url_trailer0 = $("#trailer0").attr('src');
+                
+                // Delete the URL or set it to ''
+                $("#modal0").on('hide.bs.modal', function(){
+
+                    $("#trailer0").attr('src', '');
+                });
+                
+                // Set the youtube URL when the modal is shown
+                $("#modal0").on('show.bs.modal', function(){
+                    $("#trailer0").attr('src', url_trailer0);
+                });
+
+                // Get the current url for the youtube video before removing it.
+                var url_trailer1 = $("#trailer1").attr('src');
+                
+                // Delete the URL or set it to ''
+                $("#modal1").on('hide.bs.modal', function(){
+
+                    $("#trailer1").attr('src', '');
+                });
+                
+                // Set the youtube URL when the modal is shown
+                $("#modal1").on('show.bs.modal', function(){
+                    $("#trailer1").attr('src', url_trailer1);
+                });
+
+                // Get the current url for the youtube video before removing it.
+                var url_trailer2 = $("#trailer2").attr('src');
+                
+                // Delete the URL or set it to ''
+                $("#modal2").on('hide.bs.modal', function(){
+
+                    $("#trailer2").attr('src', '');
+                });
+                
+                // Set the youtube URL when the modal is shown
+                $("#modal2").on('show.bs.modal', function(){
+                    $("#trailer2").attr('src', url_trailer2);
+                });
+
+                // Get the current url for the youtube video before removing it.
+                var url_trailer3 = $("#trailer3").attr('src');
+                
+                // Delete the URL or set it to ''
+                $("#modal3").on('hide.bs.modal', function(){
+
+                    $("#trailer3").attr('src', '');
+                });
+                
+                // Set the youtube URL when the modal is shown
+                $("#modal3").on('show.bs.modal', function(){
+                    $("#trailer3").attr('src', url_trailer3);
+                });
+
+                // Get the current url for the youtube video before removing it.
+                var url_trailer4 = $("#trailer4").attr('src');
+                
+                // Delete the URL or set it to ''
+                $("#modal4").on('hide.bs.modal', function(){
+
+                    $("#trailer4").attr('src', '');
+                });
+                
+                // Set the youtube URL when the modal is shown
+                $("#modal4").on('show.bs.modal', function(){
+                    $("#trailer4").attr('src', url_trailer4);
+                });
+
+                // Get the current url for the youtube video before removing it.
+                var url_trailer5 = $("#trailer5").attr('src');
+                
+                // Delete the URL or set it to ''
+                $("#modal5").on('hide.bs.modal', function(){
+
+                    $("#trailer5").attr('src', '');
+                });
+                
+                // Set the youtube URL when the modal is shown
+                $("#modal5").on('show.bs.modal', function(){
+                    $("#trailer5").attr('src', url_trailer5);
+                });
+
+            });
+        </script>
+        
+  </head>
+
+    <!DOCTYPE html>
+    <html lang="en">
+        <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <p class="navbar-brand">Movie Website</p>
+                </div>
+                <u1 class="nav navbar-nav">
+                    <li class="active"><a href="#">Movies</a></li>
+                </u1>
+            </div>
+        </nav>
+
+        
+    <!-- Modal -->
+    <div id=modal0 class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Avatar Trailer</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe id="trailer0" width="560" height="315" src="https://youtube.com/embed/cRdxXPV9GNQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id=modal1 class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Step Brothers Trailer</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe id="trailer1" width="560" height="315" src="https://www.youtube.com/embed/_0TWeOrIYVI" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id=modal2 class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">The Avengers Trailer</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe id="trailer2" width="560" height="315" src="https://youtube.com/embed/eOrNdBpGMv8" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id=modal3 class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">The Shawshank Redemption Trailer</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe id="trailer3" width="560" height="315" src="https://www.youtube.com/embed/6hB3S9bIaco" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id=modal4 class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Guardians of the Galaxy Trailer</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe id="trailer4" width="560" height="315" src="https://www.youtube.com/embed/2XltzyLcu0g" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id=modal5 class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">The Minions Movie Trailer</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe id="trailer5" width="560" height="315" src="https://www.youtube.com/embed/P9-FCC6I7u0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+        <div class="container-fluid">
+          
+    <div class="row" style="background-color: white;">
+        <div class="col-sm-3" align="center">
+            <a href="#"><img src="https://www.movieposter.com/posters/archive/main/98/MPW-49246" class="img-thumbnail" alt="poster" width="200" height="260" data-toggle="modal" data-target="#modal0"></a>
+        </div>
+        <div class="content col-sm-9">
+            <div class="row">
+                <div class="col-sm-12"><h1>Avatar</h1></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">A company with mineral interests on the planet of Pandora sends an ex-marine on a mission to get to know the ways of the locals to try to find a diplomatic solution to land rights and mineral deposits. Things take a turn when the marine goes rogue and joins the locals in an epic fight for their sacred lands.</div>
+            </div>
+            <div class="row" style="position:absolute; bottom:0px; width: 100%;">
+                <div class="col-sm-4">PG-13</div>
+                <div class="col-sm-4">2h 42min</div>
+                <div class="col-sm-4"><a href="#" data-toggle="modal" data-target="#modal0"><img src="play.png" width="30" height="30">Play Movie Trailer</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="background-color: whitesmoke;">
+        <div class="col-sm-3" align="center">
+            <a href="#"><img src="https://cdn.traileraddict.com/content/columbia-pictures/step_brothers.jpg" class="img-thumbnail" alt="poster" width="200" height="260" data-toggle="modal" data-target="#modal1"></a>
+        </div>
+        <div class="content col-sm-9">
+            <div class="row">
+                <div class="col-sm-12"><h1>Step Brothers</h1></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">Brennan and Dale are two middle aged men going nowhere. When their parents get married they are forced to become step brothers and move in together. While living together they fight and cause marital problems between their parents. As a result, the two team up to save their parents relationship.</div>
+            </div>
+            <div class="row" style="position:absolute; bottom:0px; width: 100%;">
+                <div class="col-sm-4">R</div>
+                <div class="col-sm-4">1h 38min</div>
+                <div class="col-sm-4"><a href="#" data-toggle="modal" data-target="#modal1"><img src="play.png" width="30" height="30">Play Movie Trailer</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="background-color: white;">
+        <div class="col-sm-3" align="center">
+            <a href="#"><img src="http://i2.wp.com/www.slashfilm.com/wp/wp-content/images/AVG_Payoff_1-Sht_v13.jpg" class="img-thumbnail" alt="poster" width="200" height="260" data-toggle="modal" data-target="#modal2"></a>
+        </div>
+        <div class="content col-sm-9">
+            <div class="row">
+                <div class="col-sm-12"><h1>The Avengers</h1></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">The S.H.I.E.L.D. Agency is tasked with bringing together many superheroes to save the planet from being destroyed by Loki.</div>
+            </div>
+            <div class="row" style="position:absolute; bottom:0px; width: 100%;">
+                <div class="col-sm-4">PG-13</div>
+                <div class="col-sm-4">2h 23min</div>
+                <div class="col-sm-4"><a href="#" data-toggle="modal" data-target="#modal2"><img src="play.png" width="30" height="30">Play Movie Trailer</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="background-color: whitesmoke;">
+        <div class="col-sm-3" align="center">
+            <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/51SPVi-1rXL._SY450_.jpg" class="img-thumbnail" alt="poster" width="200" height="260" data-toggle="modal" data-target="#modal3"></a>
+        </div>
+        <div class="content col-sm-9">
+            <div class="row">
+                <div class="col-sm-12"><h1>The Shawshank Redemption</h1></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">A successful banker is falsely accused of murder and is imprisoned at Shawkshank. While in prison he finds different ways to cope with being falsely imprisoned and becomes good friends with an inmate named Red.</div>
+            </div>
+            <div class="row" style="position:absolute; bottom:0px; width: 100%;">
+                <div class="col-sm-4">R</div>
+                <div class="col-sm-4">2h 22min</div>
+                <div class="col-sm-4"><a href="#" data-toggle="modal" data-target="#modal3"><img src="play.png" width="30" height="30">Play Movie Trailer</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="background-color: white;">
+        <div class="col-sm-3" align="center">
+            <a href="#"><img src="http://cdn.collider.com/wp-content/uploads/guardians-of-the-galaxy-movie-poster1.jpg" class="img-thumbnail" alt="poster" width="200" height="260" data-toggle="modal" data-target="#modal4"></a>
+        </div>
+        <div class="content col-sm-9">
+            <div class="row">
+                <div class="col-sm-12"><h1>Guardians of the Galaxy</h1></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">A group of rejects and criminals are forced to work together because of a common business deal. However, they end up teaming up to save the universe from a mad man trying to take it over.</div>
+            </div>
+            <div class="row" style="position:absolute; bottom:0px; width: 100%;">
+                <div class="col-sm-4">PG-13</div>
+                <div class="col-sm-4">2h 1min</div>
+                <div class="col-sm-4"><a href="#" data-toggle="modal" data-target="#modal4"><img src="play.png" width="30" height="30">Play Movie Trailer</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="background-color: whitesmoke;">
+        <div class="col-sm-3" align="center">
+            <a href="#"><img src="https://i.pinimg.com/originals/25/21/d6/2521d66145c91e8e49e20b9649e7d4a7.jpg" class="img-thumbnail" alt="poster" width="200" height="260" data-toggle="modal" data-target="#modal5"></a>
+        </div>
+        <div class="content col-sm-9">
+            <div class="row">
+                <div class="col-sm-12"><h1>The Minions Movie</h1></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">The Minions are in search of a new master. In their searches they come across a supervillain named Scarlet Overkill and they join her.</div>
+            </div>
+            <div class="row" style="position:absolute; bottom:0px; width: 100%;">
+                <div class="col-sm-4">PG</div>
+                <div class="col-sm-4">1h 31min</div>
+                <div class="col-sm-4"><a href="#" data-toggle="modal" data-target="#modal5"><img src="play.png" width="30" height="30">Play Movie Trailer</a></div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+      </body>
+    </html>
