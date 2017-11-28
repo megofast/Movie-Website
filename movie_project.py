@@ -1,10 +1,9 @@
-##########################################################################################
+###############################################################################
 # filename: movie_project.py
-# description: This program creates a simple website that displays a movies poster,
-#       gives some info, and plays the trailer
+# description: This program creates a simple website that displays a movies
+#       poster, gives some info, and plays the trailer
 # Required Files: movie.py, play.png
-##########################################################################################
-
+###############################################################################
 import webbrowser
 import os.path
 import movie
@@ -66,7 +65,7 @@ web_template_body = '''
     </html>
 '''
 
-# The following is the code necessary to stop the video playback when the modal is closed
+# The code necessary to stop the video playback when the modal is closed
 modal_script = '''
                 // Get the current url for the youtube video before removing it.
                 var url_{trailer_web_id} = $("#{trailer_web_id}").attr('src');
@@ -101,7 +100,7 @@ web_template_modal = '''
     </div>
 '''
 
-# The following creates the table in which all the content is filled, the poster, description, rating, and length
+# The following creates the table in which all the content is filled
 web_template_element = '''
     <div class="row" style="background-color: {bgcolor};">
         <div class="col-sm-3" align="center">
@@ -136,18 +135,21 @@ def main():
 
     # Loop through every movie class object in the array movies
     for movie in movies:
-        if toggle == 0: # This if statement alternates between two colors for each row
+        # This if statement alternates between two colors for each row
+        if toggle == 0:
             background_color = "white"
             toggle = 1
         else:
             background_color = "whitesmoke"
             toggle = 0
 
-        # Initialize the dynamic names for the html element ids; The counter increases the index of the name for each movie element
+        # Initialize the dynamic names for the html element ids
+        # The counter increases the index of the name for each movie element
         modal_id = "modal" + str(counter)
         trailer_id = "trailer" + str(counter)
 
-        # The following three lines format the strings, replacing the bracketed variables in the html with the dynamic data from the python code
+        # The following three lines format the strings, replacing the bracketed-
+        # variables in the html with the dynamic data from the python code
         contents = contents + web_template_element.format(
             poster_image_url = movie.poster_image_url,
             title = movie.title,
@@ -157,67 +159,106 @@ def main():
             rating = movie.rating,
             length = movie.length)
         modal = modal + web_template_modal.format(
-            modal_web_id = modal_id,
-            trailer_web_id = trailer_id,
-            movie_title = movie.title,
-            youtube_URL = movie.trailer_youtube_url)
-        script_content = script_content + modal_script.format(
-            modal_web_id = modal_id,
-            trailer_web_id = trailer_id)
+            modal_web_id=modal_id,
+            trailer_web_id=trailer_id,
+            movie_title=movie.title,
+            youtube_URL=movie.trailer_youtube_url)
+        script_content=script_content + modal_script.format(
+            modal_web_id=modal_id,
+            trailer_web_id=trailer_id)
         
-        counter = counter + 1 # Increase the counter by 1, moving onto the next element id
+        counter+=1  # Increase the counter by 1, moving onto next element id
 
-    movie_content = web_template_body.format(movie_content=contents, modal_content=modal)
+    movie_content = web_template_body.format(movie_content=contents,
+                                             modal_content=modal)
 
-    # Call the show_webpage function, sending the html text combined and formatted
-    show_webpage(web_template_head.format(web_template_modal_script = script_content) + movie_content) 
+    # Call the show_webpage function, sending the html text
+    show_webpage(web_template_head.format(
+        web_template_modal_script=script_content) + movie_content)
 
 
-# create_page(content, filename) - Creates a text file using the content supplied and the filename supplied. 
+# create_page(content, filename)
+# content - content that will be written to the file
+# filename - filename for the file to be created
 def create_page(content, filename):
     output = open(filename, "w")
     output.write(content)
     output.close()
 
-# show_webpage(content, filename) - content is the html code of the page to create and the filename is just that, the filename defaults to...
-#       index.html is no value is supplied
+# show_webpage(content, filename)
+# content - is the html code of the page to create
+# filename - is just that, the filename defaults to index.html is not supplied
 def show_webpage(webpage_content, filename='index.html'):
-    create_page(webpage_content, filename) # Call the function that actually writes the page
+    create_page(webpage_content, filename)  # Call the function to write page
     webbrowser.open("file:///" + os.path.abspath(filename))
 
 # Fill_content() - Populates all the data into the class objevt movie
 def fill_content():
-    avatar = movie.Movie("Avatar", "A company with mineral interests on the planet of Pandora sends an ex-marine on a mission to get to know the ways of the locals to try to find a diplomatic solution to land rights and mineral deposits. Things take a turn when the marine goes rogue and joins the locals in an epic fight for their sacred lands.",
-                     "https://www.movieposter.com/posters/archive/main/98/MPW-49246",
-                     "https://youtube.com/embed/cRdxXPV9GNQ",
+    avatar = movie.Movie("Avatar", "A company with mineral interests on the "
+                         "planet of Pandora sends an ex-marine on a mission to"
+                         " get to know the ways of the locals to try to find a"
+                         " diplomatic solution to land rights and mineral "
+                         "deposits. Things take a turn when the marine goes "
+                         "rogue and joins the locals in an epic fight for"
+                         " their sacred lands.",
+                         "https://www.movieposter.com/posters/archive/main/98/MPW-49246",  #NOQA
+                         "https://youtube.com/embed/cRdxXPV9GNQ",
                          "PG-13", "2h 42min")
 
-    step_brothers = movie.Movie("Step Brothers", "Brennan and Dale are two middle aged men going nowhere. When their parents get married they are forced to become step brothers and move in together. While living together they fight and cause marital problems between their parents. As a result, the two team up to save their parents relationship.",
-                                "https://cdn.traileraddict.com/content/columbia-pictures/step_brothers.jpg",
+    step_brothers = movie.Movie("Step Brothers", "Brennan and Dale are two"
+                                " middle aged men going nowhere. When their "
+                                "parents get married they are forced to become"
+                                " step brothers and move in together. While "
+                                "living together they fight and cause marital "
+                                "problems between their parents. As a result, "
+                                "the two team up to save their parents "
+                                "relationship.",
+                                "https://cdn.traileraddict.com/content/columbia-pictures/step_brothers.jpg",  #NOQA
                                 "https://www.youtube.com/embed/_0TWeOrIYVI",
                                 "R", "1h 38min")
 
-    the_avengers = movie.Movie("The Avengers", "The S.H.I.E.L.D. Agency is tasked with bringing together many superheroes to save the planet from being destroyed by Loki.",
-                               "http://i2.wp.com/www.slashfilm.com/wp/wp-content/images/AVG_Payoff_1-Sht_v13.jpg",
+    the_avengers = movie.Movie("The Avengers", "The S.H.I.E.L.D. Agency is "
+                               "tasked with bringing together many superheroes"
+                               " to save the planet from being destroyed by "
+                               "Loki.",
+                               "http://i2.wp.com/www.slashfilm.com/wp/wp-content/images/AVG_Payoff_1-Sht_v13.jpg",  #NOQA
                                "https://youtube.com/embed/eOrNdBpGMv8",
                                "PG-13", "2h 23min")
 
-    the_shawshank_redemption = movie.Movie("The Shawshank Redemption", "A successful banker is falsely accused of murder and is imprisoned at Shawkshank. While in prison he finds different ways to cope with being falsely imprisoned and becomes good friends with an inmate named Red.",
-                                           "https://images-na.ssl-images-amazon.com/images/I/51SPVi-1rXL._SY450_.jpg",
-                                           "https://www.youtube.com/embed/6hB3S9bIaco",
+    the_shawshank_redemption = movie.Movie("The Shawshank Redemption", "A "
+                                           "successful banker is falsely "
+                                           "accused of murder and is "
+                                           "imprisoned at Shawkshank. While in"
+                                           " prison he finds different ways to"
+                                           " cope with being falsely "
+                                           "imprisoned and becomes good "
+                                           "friends with an inmate named Red.",
+                                           "https://images-na.ssl-images-amazon.com/images/I/51SPVi-1rXL._SY450_.jpg",  #NOQA
+                                           "https://www.youtube.com/embed/6hB3S9bIaco",  #NOQA
                                            "R", "2h 22min")
 
-    guardians_of_the_galaxy = movie.Movie("Guardians of the Galaxy", "A group of rejects and criminals are forced to work together because of a common business deal. However, they end up teaming up to save the universe from a mad man trying to take it over.",
-                                          "http://cdn.collider.com/wp-content/uploads/guardians-of-the-galaxy-movie-poster1.jpg",
-                                          "https://www.youtube.com/embed/2XltzyLcu0g",
+    guardians_of_the_galaxy = movie.Movie("Guardians of the Galaxy", "A group "
+                                          "of rejects and criminals are forced"
+                                          " to work together because of a "
+                                          "common business deal. However, they"
+                                          " end up teaming up to save the "
+                                          "universe from a mad man trying to "
+                                          "take it over.",
+                                          "http://cdn.collider.com/wp-content/uploads/guardians-of-the-galaxy-movie-poster1.jpg",  #NOQA
+                                          "https://www.youtube.com/embed/2XltzyLcu0g",  #NOQA
                                           "PG-13", "2h 1min")
 
-    the_minions_movie = movie.Movie("The Minions Movie", "The Minions are in search of a new master. In their searches they come across a supervillain named Scarlet Overkill and they join her.",
-                                    "https://i.pinimg.com/originals/25/21/d6/2521d66145c91e8e49e20b9649e7d4a7.jpg",
-                                    "https://www.youtube.com/embed/P9-FCC6I7u0",
+    the_minions_movie = movie.Movie("The Minions Movie", "The Minions are in "
+                                    "search of a new master. In their searches"
+                                    " they come across a supervillain named "
+                                    "Scarlet Overkill and they join her.",
+                                    "https://i.pinimg.com/originals/25/21/d6/2521d66145c91e8e49e20b9649e7d4a7.jpg",  #NOQA
+                                    "https://www.youtube.com/embed/P9-FCC6I7u0",  #NOQA
                                     "PG", "1h 31min")
-
-    movies = [avatar, step_brothers, the_avengers, the_shawshank_redemption, guardians_of_the_galaxy, the_minions_movie]
-    return movies # returns the array movies
+    
+    # Create an array with all the movie data from above
+    movies = [avatar, step_brothers, the_avengers, the_shawshank_redemption,
+              guardians_of_the_galaxy, the_minions_movie]
+    return movies  # returns the array movies
 
 main()
